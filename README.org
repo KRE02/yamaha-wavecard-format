@@ -89,3 +89,4 @@ sample-data /* sample data blob (44100 Hz, Signed 16-Bit PCM), sample locations 
 |    3 | Sample-Addr | Loop-End   |                                                        |
 |    1 |             | ?          |                                                        |
 |    3 | Sample-Addr | End        |                                                        |
+|   82 |             | ?          |                                                        |
