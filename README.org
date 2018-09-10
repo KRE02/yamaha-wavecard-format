@@ -90,3 +90,256 @@ sample-data /* sample data blob (44100 Hz, Signed 16-Bit PCM), sample locations 
 |    1 |             | ?          |                                                        |
 |    3 | Sample-Addr | End        |                                                        |
 |   82 |             | ?          |                                                        |
+* Application
+** Dependencies
+- libsndfile
+- yaml-cpp
+** Build
+   #+BEGIN_SRC sh
+   mkdir build && cd build
+   cmake ..
+   make
+   #+END_SRC
+
+** Usage
+
+   Running:
+
+   #+BEGIN_SRC sh
+   ./sywave unpack <wavecard-file>
+   #+END_SRC
+   
+   Upacks the card to a directory named after the cards name.
+   For the a card named W7701 this would create the following structure:
+
+   #+BEGIN_SRC sh
+   W7701.wavecard/
+   ├── data.yaml
+   └── samples
+       ├── ASaxHard
+       │   ├── 0.wav
+       │   ├── 1.wav
+       │   ├── 2.wav
+       │   ├── 3.wav
+       │   ├── 4.wav
+       │   ├── 5.wav
+       │   ├── 6.wav
+       │   ├── 7.wav
+       │   ├── 8.wav
+       │   └── 9.wav
+       ├── ASaxSoft
+       │   ├── 0.wav
+       │   ├── 1.wav
+       │   ├── 2.wav
+       │   ├── 3.wav
+       │   ├── 4.wav
+       │   ├── 5.wav
+       │   ├── 6.wav
+       │   ├── 7.wav
+       │   ├── 8.wav
+       │   └── 9.wav
+       ├── TSaxHard
+       │   ├── 0.wav
+       │   ├── 10.wav
+       │   ├── 11.wav
+       │   ├── 1.wav
+       │   ├── 2.wav
+       │   ├── 3.wav
+       │   ├── 4.wav
+       │   ├── 5.wav
+       │   ├── 6.wav
+       │   ├── 7.wav
+       │   ├── 8.wav
+       │   └── 9.wav
+       └── TSaxSoft
+           ├── 0.wav
+           ├── 1.wav
+           ├── 2.wav
+           ├── 3.wav
+           ├── 4.wav
+           ├── 5.wav
+           ├── 6.wav
+           ├── 7.wav
+           └── 8.wav
+   #+END_SRC
+   
+   The file "data.yaml" contains the cards wave- and sample properties.
+   It's contents would look like:
+
+   #+BEGIN_SRC yaml
+   name: W7701
+   id: 768
+   wave:
+     - name: TSaxSoft
+       samples:
+         - volume: 126
+           orig-key: C2
+           loop-mode: loop-forward
+           pitch: 14
+         - volume: 127
+           orig-key: D#2
+           loop-mode: loop-forward
+           pitch: 9
+         - volume: 111
+           orig-key: F#2
+           loop-mode: loop-forward
+           pitch: 22
+         - volume: 121
+           orig-key: A2
+           loop-mode: loop-forward
+           pitch: 21
+         - volume: 117
+           orig-key: C3
+           loop-mode: loop-forward
+           pitch: 21
+         - volume: 124
+           orig-key: D#3
+           loop-mode: loop-forward
+           pitch: 16
+         - volume: 111
+           orig-key: F#3
+           loop-mode: loop-forward
+           pitch: 9
+         - volume: 110
+           orig-key: A3
+           loop-mode: loop-forward
+           pitch: 6
+         - volume: 113
+           orig-key: C4
+           loop-mode: loop-forward
+           pitch: -124
+     - name: TSaxHard
+       samples:
+         - volume: 127
+           orig-key: F#1
+           loop-mode: loop-forward
+           pitch: 9
+         - volume: 125
+           orig-key: A1
+           loop-mode: loop-forward
+           pitch: 21
+         - volume: 123
+           orig-key: C2
+           loop-mode: loop-forward
+           pitch: 8
+         - volume: 127
+           orig-key: D#2
+           loop-mode: loop-forward
+           pitch: 2
+         - volume: 119
+           orig-key: F#2
+           loop-mode: loop-forward
+           pitch: 17
+         - volume: 122
+           orig-key: A2
+           loop-mode: loop-forward
+           pitch: 10
+         - volume: 120
+           orig-key: C3
+           loop-mode: loop-forward
+           pitch: 8
+         - volume: 120
+           orig-key: D#3
+           loop-mode: loop-forward
+           pitch: -123
+         - volume: 110
+           orig-key: F#3
+           loop-mode: loop-forward
+           pitch: 9
+         - volume: 114
+           orig-key: A3
+           loop-mode: loop-forward
+           pitch: -124
+         - volume: 108
+           orig-key: C4
+           loop-mode: loop-forward
+           pitch: -124
+         - volume: 111
+           orig-key: D#4
+           loop-mode: loop-forward
+           pitch: 16
+     - name: ASaxSoft
+       samples:
+         - volume: 121
+           orig-key: F2
+           loop-mode: loop-forward
+           pitch: -114
+         - volume: 127
+           orig-key: G#2
+           loop-mode: loop-forward
+           pitch: -118
+         - volume: 102
+           orig-key: B2
+           loop-mode: loop-forward
+           pitch: -122
+         - volume: 115
+           orig-key: D3
+           loop-mode: loop-forward
+           pitch: -115
+         - volume: 119
+           orig-key: F3
+           loop-mode: loop-forward
+           pitch: -102
+         - volume: 120
+           orig-key: G#3
+           loop-mode: loop-forward
+           pitch: -108
+         - volume: 114
+           orig-key: B3
+           loop-mode: loop-forward
+           pitch: -99
+         - volume: 110
+           orig-key: D4
+           loop-mode: loop-forward
+           pitch: -101
+         - volume: 107
+           orig-key: F4
+           loop-mode: loop-forward
+           pitch: -101
+         - volume: 115
+           orig-key: G#4
+           loop-mode: loop-forward
+           pitch: -108
+     - name: ASaxHard
+       samples:
+         - volume: 123
+           orig-key: F2
+           loop-mode: loop-forward
+           pitch: 6
+         - volume: 127
+           orig-key: G#2
+           loop-mode: loop-forward
+           pitch: -127
+         - volume: 111
+           orig-key: B2
+           loop-mode: loop-forward
+           pitch: -122
+         - volume: 119
+           orig-key: D3
+           loop-mode: loop-forward
+           pitch: 1
+         - volume: 113
+           orig-key: F3
+           loop-mode: loop-forward
+           pitch: -110
+         - volume: 121
+           orig-key: G#3
+           loop-mode: loop-forward
+           pitch: -118
+         - volume: 115
+           orig-key: B3
+           loop-mode: loop-forward
+           pitch: -122
+         - volume: 119
+           orig-key: D4
+           loop-mode: loop-forward
+           pitch: 1
+         - volume: 113
+           orig-key: F4
+           loop-mode: loop-forward
+           pitch: -102
+         - volume: 112
+           orig-key: G#4
+           loop-mode: loop-forward
+           pitch: -108
+   #+END_SRC
