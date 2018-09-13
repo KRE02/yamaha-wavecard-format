@@ -1,11 +1,16 @@
-# WaveBlade minicom configuration
-# -------------------------------
-# Copy this file into /etc/
-#
+# Machinell erzeugte Datei - Verwenden Sie "minicom -s" zum Ändern
 pu pname1           YUYNNbinary
+pu pname2           YUNYY
+pu pname3           YUNYN
+pu pname4           NDNYY
+pu pname5           NDNYY
+pu pname6           YDNYN
+pu pname7           YUYNN
+pu pname8           NDYNN
+pu pname9           YUNYN
+pu pname10          YUYNN
 pu pprog1           bin-xfer -o %l
+pu pprog10          bin-xfer -o %l
 pu port             /dev/ttyACM0
-pu baudrate         115200
-pu bits             8
 pu parity           O
-pu stopbits         1
+pu rtscts           No 

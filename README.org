@@ -343,3 +343,10 @@ sample-data /* sample data blob (44100 Hz, Signed 16-Bit PCM), sample locations 
            loop-mode: loop-forward
            pitch: -108
    #+END_SRC
+
+* WaveBlade programmer connection
+
+The WaveBlade programmer can be used with =minicom=.
+A minicom configuration is in this repository. After copying the configuration to =/etc/=,
+a connection can be established via =sudo minicom wave-blade -c on=.
+
