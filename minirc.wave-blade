@@ -1,0 +1,11 @@
+# WaveBlade minicom configuration
+# -------------------------------
+# Copy this file into /etc/
+#
+pu pname1           YUYNNbinary
+pu pprog1           bin-xfer -o %l
+pu port             /dev/ttyACM0
+pu baudrate         115200
+pu bits             8
+pu parity           O
+pu stopbits         1
